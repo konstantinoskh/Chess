@@ -6,7 +6,7 @@ public class Piece {
     private int row;
     private int column;
     private boolean isBlack;
-    private char symbol;
+    protected char symbol;
 
     public Piece(int row, int column, boolean isBlack) {
         this.row = row;
@@ -34,8 +34,9 @@ public class Piece {
     public String getPosition() {
         return ChessUtils.columnToLetter(column) + ChessUtils.rowToNumber(row);
     }
-
-
+public boolean isValidMove(String targetPosition){
+        return true;
+    }
 }
 
 
