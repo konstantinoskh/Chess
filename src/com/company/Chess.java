@@ -13,7 +13,12 @@ public class Chess {
             board[1][c] = new Piece(1, c, false);
             board[6][c] = new Piece(6, c, true);
         }
-        board[0][3] = new King("A4", false);
+        board[0][4] = new King("E1", true);
+        board[7][4] = new King("E8", false);
+        board[7][6] = new Knight("G8", false);
+        board[7][1] = new Knight("B8", false);
+        board[0][6] = new Knight("G1", true);
+        board[0][1] = new Knight("B1", true);
     }
 
     // print the current board layout
@@ -37,10 +42,10 @@ public class Chess {
 
     public void move(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the place to move: ");
-        String startPosition = input.nextLine();
+        System.out.println("Enter the piece to move: ");
+        String startPosition = input.nextLine().toUpperCase();
         System.out.println("Enter the square to move to: ");
-        String endPosition = input.nextLine();
+        String endPosition = input.nextLine().toUpperCase();
         Piece toMove = getPieceAt(startPosition);
         boolean validMove = false;
         if (toMove != null) {

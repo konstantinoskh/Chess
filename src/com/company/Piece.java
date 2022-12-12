@@ -24,9 +24,9 @@ public class Piece {
 
     public char getSymbol() {
         if (isBlack) {
-            return Character.toUpperCase(symbol);
+            return Character.toLowerCase(symbol);
         }
-        return Character.toLowerCase(symbol);
+        return Character.toUpperCase(symbol);
     }
 
 
