@@ -2,6 +2,7 @@ package com.company;
 
 public class King extends Piece{
     private boolean isCheck;
+    private boolean hasCastle;
 
     public King(String position, boolean isBlack) {
         super(position, isBlack);

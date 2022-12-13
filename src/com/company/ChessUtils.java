@@ -22,6 +22,10 @@ public class ChessUtils {
         return Character.toString(letter);
     }
 
+    public static String getPositionFromCoords(int row, int col) {
+        return columnToLetter(col) + rowToNumber((row));
+    }
+
     // eg 0 -> "1", 1 -> "2" etc
     public static String rowToNumber(int r) {
         return Integer.toString(r + 1);

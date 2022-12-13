@@ -19,6 +19,10 @@ public class Chess {
         board[7][1] = new Knight("B8", false);
         board[0][6] = new Knight("G1", true);
         board[0][1] = new Knight("B1", true);
+        board[0][7] = new Rook("H8", true);
+        board[0][0] = new Rook("A8", true);
+        board[7][0] = new Rook("A1", false);
+        board[7][7] = new Rook("H1", false);
     }
 
     // print the current board layout
