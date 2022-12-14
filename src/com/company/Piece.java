@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Piece {
@@ -39,9 +40,17 @@ public class Piece {
         column = ChessUtils.getColumnFromPosition(newPosition);
     }
 
-public boolean isValidMove(String targetPosition){
+    public boolean isValidMove(String targetPosition) {
+        // can't stand still
+        if (getPosition().equals(targetPosition)) {
+            return false;
+        }
         return true;
     }
+    public ArrayList<String> passesThrough(String position) {
+        return new ArrayList<>();
+    }
 }
+
 
 

@@ -16,13 +16,7 @@ public class Rook extends Piece {
         int currentColumnPosition = ChessUtils.getColumnFromPosition(position);
         int targetRow = ChessUtils.getRowFromPosition(targetPosition);
         int targetColumn = ChessUtils.getColumnFromPosition(targetPosition);
-        if ((targetRow - currentRowPosition) == 0 && (targetColumn - currentColumnPosition) == 0) {
-            return false;
-        } else if
-        (Math.abs(targetRow - currentRowPosition) <= 8 && (targetColumn - currentColumnPosition) == 0) {
-            return true;
-        }else
-            return (Math.abs(targetColumn - currentColumnPosition) <=8 && (targetRow - currentRowPosition) == 0);
+        return (currentColumnPosition == targetColumn || currentRowPosition == targetRow);
     }
     public ArrayList<String> passesThrough(String targetPosition) {
         String position = getPosition();
@@ -33,9 +27,9 @@ public class Rook extends Piece {
 
         ArrayList<String> squares = new ArrayList<>();
         if (isValidMove(targetPosition)) {
-            int row = currentRowPosition+1;
+            int row = currentRowPosition;
             do{
-                int col = currentColumnPosition+1;
+                int col = currentColumnPosition;
                 do{
                     squares.add(ChessUtils.getPositionFromCoords(row, col));
                     col++;
@@ -43,6 +37,7 @@ public class Rook extends Piece {
             row++;
         }while (row<targetRow);
     }
+        squares.remove(0);
         return squares;
     }
 }
