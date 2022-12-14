@@ -15,18 +15,24 @@ public class Chess {
         }
         board[0][4] = new King("E1", true);
         board[7][4] = new King("E8", false);
+
         board[7][6] = new Knight("G8", false);
         board[7][1] = new Knight("B8", false);
         board[0][6] = new Knight("G1", true);
         board[0][1] = new Knight("B1", true);
-        board[0][7] = new Rook("H8", true);
-        board[0][0] = new Rook("A8", true);
-        board[7][0] = new Rook("A1", false);
-        board[7][7] = new Rook("H1", false);
+
+        board[0][7] = new Rook("H1", true);
+        board[0][0] = new Rook("A1", true);
+        board[7][0] = new Rook("A8", false);
+        board[7][7] = new Rook("H8", false);
     }
 
     // print the current board layout
     public void display() {
+        for (int i = 0; i<=7; i++){
+            System.out.print(ChessUtils.columnToLetter(i) + " ");
+        }
+        System.out.println();
         for (int r=0; r<8; r++) {
             for (int c=0; c<8; c++) {
                 if (board[r][c] != null) {
@@ -35,6 +41,7 @@ public class Chess {
                     System.out.print("_ ");  // blank square
                 }
             }
+            System.out.print("| " + (r+1) );
             System.out.println();  // start a new row
         }
     }
